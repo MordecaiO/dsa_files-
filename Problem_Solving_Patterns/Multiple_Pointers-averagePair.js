@@ -19,3 +19,24 @@ averagePair([],4) // false
 
 
 /*
+
+function averagePair(arr, val){
+  // initialise both pointers 
+  let front = 0; let back = arr.length - 1 ; 
+  
+  // loop through array 
+  while (front < back){
+      let avg = (arr[front] + arr[back]) / 2 
+      // if average of items at pointers index = target value return true 
+      if (avg === val) {
+          return true
+      } else if (avg < val){
+          front++
+      } else {
+          back--
+      }
+      
+  }
+  
+   return false 
+}
