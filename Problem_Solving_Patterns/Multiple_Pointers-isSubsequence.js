@@ -16,3 +16,23 @@ Time Complexity - O(N + M)
 
 Space Complexity - O(1)
 */
+
+function isSubsequence(subStr, mainStr) {
+  // initialise pointers for sub & main 
+  let i = 0; let j = 0; let count = 0; 
+  
+  // while loop for sub (i < length sub)
+  while (i < subStr.length){
+      // if i & j !== increment j 
+      if (subStr[i] !== mainStr[j]){
+          j++;
+      } else {
+          // else increment count 
+          count++;
+          i++;
+      }
+  }
+  
+  // if count !== sub.length return false 
+  return count === subStr.length ? true : false ; 
+}
