@@ -18,3 +18,21 @@ Time Complexity - O(N)
 Space Complexity - O(1)
 */
 
+function maxSubarraySum(arr, num){
+  // if num > length return null 
+  if (num > arr.length) return null ; 
+  // find initial sum or window value 
+  let currSum =  arr.slice(0 ,num).reduce((a, v) => a + v); 
+  // initialise max sum
+  let maxSum = currSum; 
+  let start = 0; let end = start + (num) ; 
+  // loop through arr 
+  while (end < arr.length){
+      currSum = currSum - arr[start] + arr[end]; 
+      if(currSum > maxSum) maxSum = currSum; 
+      start++; 
+      end++; 
+  }
+  
+   return maxSum
+}
