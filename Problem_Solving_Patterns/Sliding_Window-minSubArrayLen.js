@@ -18,3 +18,31 @@ Space Complexity - O(1)
 
 */
 
+function minSubArrayLen (arr, targetSum) {
+     // account for case where arr contains item > targetSum
+     // initialise window variables and curr sum 
+     let start = 0; let end = 0 ; let currSum = arr[0]; 
+     let minLength = Infinity; 
+    
+     // while end of window < arr 
+     while (end < arr.length){
+         if (currSum < targetSum){
+             end++ ; 
+             currSum = currSum + arr[end] ; 
+         } else if (currSum >= targetSum && (end - start) < minLength){
+              minLength = (end - start) + 1 ;
+             currSum = currSum - arr[start] ; 
+             start++ ; 
+         } else { 
+             break ; 
+     }
+     // if the current sum is < targetSum 
+     // increment end 
+     // else if the current sum >= target sum and length < minlength 
+     // increment start, store len
+     // else break 
+     
+     
+ }
+     return minLength === Infinity ? 0 : minLength ;
+ }
