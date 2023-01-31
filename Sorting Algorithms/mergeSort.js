@@ -1,6 +1,6 @@
 
 const mergeSort = (arr)=>{
-
+// function merges and sorts two sorted arrays
     const merge = (arr1,arr2)=>{
         let i = 0
           , j = 0
@@ -18,7 +18,7 @@ const mergeSort = (arr)=>{
                 j++;
             }
         }
-
+// when one arr has been emptied add all items of the other array 
         while (i < arr1.length) {
             result.push(arr1[i]);
             i++;
@@ -31,7 +31,7 @@ const mergeSort = (arr)=>{
 
         return result;
     }
-
+// base case for recursion 
     if (arr.length === 1)
         return arr;
     let mid = Math.floor(arr.length / 2);
